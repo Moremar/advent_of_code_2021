@@ -32,10 +32,7 @@ def solve_part2(arr):
 
 def parse(input_path):
     with open(input_path, 'r') as f:
-        res = []
-        for line in f.readlines():
-            res.append(tuple(map(int, list(line.strip()))))
-        return res
+        return [tuple(map(int, list(line.strip()))) for line in f.readlines()]
 
 
 if __name__ == "__main__":
