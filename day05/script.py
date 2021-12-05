@@ -31,8 +31,8 @@ def parse(input_path):
     with open(input_path, 'r') as f:
         vents = []
         for line in f.readlines():
-            m = re.match(r'(\d+),(\d+) -> (\d+),(\d+)', line)
-            vents.append(((int(m.group(1)), int(m.group(2))), (int(m.group(3)), int(m.group(4)))))
+            x1, y1, x2, y2 = re.match(r'(\d+),(\d+) -> (\d+),(\d+)', line).groups()
+            vents.append(((int(x1), int(y1)), (int(x2), int(y2))))
         return vents
 
 
