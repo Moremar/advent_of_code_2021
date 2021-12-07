@@ -4,7 +4,7 @@ def solve_part1(positions):
 
 def solve_part2(positions):
     sum_of_int = {0: 0}
-    for i in range(1, max(positions)+10):
+    for i in range(1, max(positions)+1):
         sum_of_int[i] = sum_of_int[i-1] + i
     return min([sum([sum_of_int[abs(p0-p)] for p0 in positions]) for p in range(max(positions))])
 
