@@ -16,7 +16,7 @@ def solve_part1(input):
             if (x_adj, y_adj) not in world:
                 continue
             total_risk = risk + world[(x_adj, y_adj)]
-            if (x_adj, y_adj) not in risks or risks[(x_adj, y_adj)] > total_risk:
+            if (x_adj, y_adj) not in risks:
                 risks[(x_adj, y_adj)] = total_risk
                 if (x_adj, y_adj) == (len_x - 1, len_y - 1):
                     return total_risk
@@ -31,7 +31,7 @@ def make_big_world(len_x, len_y, world):
                 new_i = key[0] + i * len_x
                 new_j = key[1] + j * len_y
                 new_val = world[key] + i + j
-                if world[key] + i + j >= 10:
+                if new_val >= 10:
                     new_val -= 9
                 bigworld[(new_i, new_j)] = new_val
     return bigworld
